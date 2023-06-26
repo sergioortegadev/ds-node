@@ -60,7 +60,7 @@ const ExpresionesRegulares = ({ password }) => {
           {pass === "ALTA" && (
             <>
               <div className="semaforo">
-                <img src="./src/assets/pass3.png" alt="verde" />
+                <img src="./assets/pass3.png" alt="verde" />
               </div>
               <h3>Contraseña Segura</h3>
             </>
@@ -68,7 +68,7 @@ const ExpresionesRegulares = ({ password }) => {
           {pass === "MEDIA" && (
             <>
               <div className="semaforo">
-                <img src="./src/assets/pass2.png" alt="amarillo" />
+                <img src="./assets/pass2.png" alt="amarillo" />
               </div>
               <h3>
                 Contraseña de Media Seguridad. Agregar alguno de estos signos
@@ -79,7 +79,7 @@ const ExpresionesRegulares = ({ password }) => {
           {pass === "BAJA" && (
             <>
               <div className="semaforo">
-                <img src="./src/assets/pass1.png" alt="amarillo" />
+                <img src="./assets/pass1.png" alt="amarillo" />
               </div>
               <h3>
                 Contraseña de BAJA Seguridad. Agregar minúsculas y mayúsculas

@@ -3,7 +3,7 @@ import { useState } from "react";
 //import viteLogo from "/vite.svg";
 import ExpresionesRegulares from "./03-RegExp/ExpresionesRegulares";
 import "./App.css";
-import { HashRouter, Router } from "react-router-dom";
+//import { HashRouter, Router } from "react-router-dom";
 import CodeRegExp1 from "./03-RegExp/CodeRegExp1";
 
 let initialPassword = "";
