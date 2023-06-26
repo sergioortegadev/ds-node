@@ -3,6 +3,8 @@ import { useState } from "react";
 //import viteLogo from "/vite.svg";
 import ExpresionesRegulares from "./03-RegExp/ExpresionesRegulares";
 import "./App.css";
+import { HashRouter, Router } from "react-router-dom";
+import CodeRegExp1 from "./03-RegExp/CodeRegExp1";
 
 let initialPassword = "";
 
@@ -10,6 +12,12 @@ function App() {
   //const [count, setCount] = useState(0);
   //const [resultado, setResultado] = useState(false);
   const [password, setPassword] = useState(initialPassword);
+  const [codes, setCodes] = useState(false);
+
+  const onOffCodes = () => {
+    if (codes) setCodes(false);
+    else setCodes(true);
+  };
 
   const handleChange = (e) => {
     setPassword(e.target.value);
@@ -76,6 +84,12 @@ function App() {
           Click on the Vite and React logos to learn more
         </p>
       </div> */}
+      <div className="buttons">
+        <button className="button" onClick={() => onOffCodes()}>
+          Ver códigos RegExp
+        </button>
+      </div>
+      {codes && <CodeRegExp1 />}
     </>
   );
 }
