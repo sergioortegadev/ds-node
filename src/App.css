@@ -1,6 +1,7 @@
 :root {
   --main-color: #f0db4f;
   --second-color: #323330;
+  --code-font: "Courier New", Courier, monospace;
   font-size: 16px;
 }
 #root {
@@ -88,4 +89,16 @@
   color: #cc2211;
   margin: 0;
   padding: 0;
+}
+.codes {
+  margin: 0.75rem 0;
+  border: 1px solid #111111;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+}
+.codes h3 {
+  color: var(--main-color);
+}
+.codes p {
+  font-family: var(--code-font);
 }

@@ -2,7 +2,7 @@ import React from "react";
 
 const CodeRegExp1 = () => {
   return (
-    <div>
+    <div className="codes">
       <h3>Código Expresiones Regulares Utilizadas</h3>
       <h4>Para las contraseñas seguridad baja</h4>
       <p>/^(?=.*[0-9])(?=.*[a-zA-ZñÑ])[a-zA-Z0-9\s_+*@#ñÑáéíóúÁÉÍÓÚ]+$/</p>
