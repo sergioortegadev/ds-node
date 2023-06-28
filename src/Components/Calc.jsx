@@ -16,6 +16,16 @@ const Calc = () => {
       </button>
 
       <button>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/sergioortegadev/ds-node"
+        >
+          Source & Doc in GitHub
+        </a>
+      </button>
+
+      <button>
         <Link to="/">Home</Link>
       </button>
     </div>
