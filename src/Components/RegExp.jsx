@@ -36,6 +36,9 @@ const RegExp = () => {
   return (
     <>
       <div>
+        <button>
+          <Link to="/">Home</Link>
+        </button>
         <h1 className="title">Password Tester</h1>
         <form className="form-regexp">
           <label className="input-label">
@@ -88,9 +91,6 @@ const RegExp = () => {
         </button>
       </div>
       {codes && <CodeRegExp1 />}
-      <button>
-        <Link to="/">Home</Link>
-      </button>
     </>
   );
 };

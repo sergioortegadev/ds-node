@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 const Calc = () => {
   return (
     <div>
+      <button>
+        <Link to="/">Home</Link>
+      </button>
       <h1>Calculadora node en CLI</h1>
       <button>
         <a
@@ -22,10 +25,6 @@ const Calc = () => {
         >
           Source & Doc in GitHub
         </a>
-      </button>
-
-      <button>
-        <Link to="/">Home</Link>
       </button>
     </div>
   );

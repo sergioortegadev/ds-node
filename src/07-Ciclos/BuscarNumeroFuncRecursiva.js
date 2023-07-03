@@ -1,4 +1,4 @@
-// Busca un número en un rango del 0 al 10000. Se ejecuta: node BuscarNumero.js [número]
+// Busca un número en un rango del 0 al 10000. Se ejecuta: node BuscarNumeroFuncRecursiva.js [número]
 import { colorCLI } from "./colorCLI.js"; // Trae los códigos de color, para utilizarlos en la salida de consola.
 
 const userLiteral = process.argv[2];
@@ -10,6 +10,15 @@ let count = 1,
   end = 10001;
 
 const verificaciones = () => {
+  if (userLiteral == undefined)
+    return (
+      console.log(),
+      console.log(
+        `${colorCLI.Bright}${colorCLI.BgRed}« Ingresar número del 0 al 10000 » ${colorCLI.FgYellow}░ ${colorCLI.Bright}PROGRAMA DETENIDO ${colorCLI.FgYellow}░ ${colorCLI.Reset}`
+      ),
+      process.exit(1)
+    );
+
   if (userN < 0 || userN >= 10001)
     return (
       console.log(),
@@ -103,29 +112,33 @@ const imprimir = (n) => {
       break;
   }
 };
-const busquedaNumero = () => {
+const busquedaNumero = (init, mid, end) => {
   verificaciones();
 
-  while (mid != userN) {
+  mid = Math.floor(mid);
+  if (mid == userN) return imprimir(count);
+  else if (mid != userN) {
     if (userN < mid) {
+      count++;
       end = mid;
       mid = init + (end - init) / 2;
+      busquedaNumero(init, mid, end);
     } else {
-      // (userN > mid)
+      //(userN > mid)
+      count++;
       init = mid;
       mid = init + (end - init) / 2;
+      busquedaNumero(init, mid, end);
     }
-    mid = Math.floor(mid);
-    count++;
-    if (count > 1_000_000)
-      return (
-        console.log(""),
-        console.log(
-          ` ${colorCLI.FgWhite}${colorCLI.BgRed}« Se superó el millón de Ciclos » ${colorCLI.FgYellow}░ ${colorCLI.Bright}PROGRAMA DETENIDO ${colorCLI.FgYellow}░ ${colorCLI.Reset}`
-        )
-      );
   }
-  return imprimir(count);
+
+  if (count > 1_000_000)
+    return (
+      console.log(""),
+      console.log(
+        ` ${colorCLI.FgWhite}${colorCLI.BgRed}« Se superó el millón de Ciclos » ${colorCLI.FgYellow}░ ${colorCLI.Bright}PROGRAMA DETENIDO ${colorCLI.FgYellow}░ ${colorCLI.Reset}`
+      )
+    );
 };
 
-busquedaNumero();
+busquedaNumero(init, mid, end);

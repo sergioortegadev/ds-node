@@ -1,4 +1,4 @@
-import React from "react";
+//import React from "react";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -13,6 +13,9 @@ const Home = () => {
       </button>
       <button>
         <Link to="calc">Calculadora</Link>
+      </button>
+      <button>
+        <Link to="ciclos">Ciclos</Link>
       </button>
     </div>
   );

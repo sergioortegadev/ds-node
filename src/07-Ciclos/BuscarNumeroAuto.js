@@ -102,37 +102,68 @@ let count = 1,
       break;
   }
 }; */
-export const busquedaNumeroAuto = (userN) => {
+const busquedaNumeroAutoPromise = (userN) => {
   //verificaciones();
-
-  while (mid != userN) {
-    if (userN < mid) {
-      end = mid;
-      mid = init + (end - init) / 2;
-    } else {
-      // (userN > mid)
-      init = mid;
-      mid = init + (end - init) / 2;
-    }
-    mid = Math.floor(mid);
-    count++;
-    if (count > 1_000_000)
-      return (
+  return new Promise((resolve, reject) => {
+    if (userN == undefined)
+      reject(
         console.log(""),
         console.log(
-          ` ${colorCLI.FgWhite}${colorCLI.BgRed}« Se superó el millón de Ciclos » ${colorCLI.FgYellow}░ ${colorCLI.Bright}PROGRAMA DETENIDO ${colorCLI.FgYellow}░ ${colorCLI.Reset}`
+          ` ${colorCLI.FgBlue}${colorCLI.BgYellow}« Error, parámetro no obtenido » ${colorCLI.FgYellow}░ ${colorCLI.Bright} ----------------- ${colorCLI.FgYellow}░ ${colorCLI.Reset}`
         )
       );
-  }
-  return count;
+    resolve(function busquedaNumeroAuto(userN) {
+      while (mid != userN) {
+        if (userN < mid) {
+          end = mid;
+          mid = init + (end - init) / 2;
+        } else {
+          // (userN > mid)
+          init = mid;
+          mid = init + (end - init) / 2;
+        }
+        mid = Math.floor(mid);
+        count++;
+        if (count > 1_000_000)
+          return (
+            console.log(""),
+            console.log(
+              ` ${colorCLI.FgWhite}${colorCLI.BgRed}« Se superó el millón de Ciclos » ${colorCLI.FgYellow}░ ${colorCLI.Bright}PROGRAMA DETENIDO ${colorCLI.FgYellow}░ ${colorCLI.Reset}`
+            )
+          );
+      }
+      return count;
+    });
+  });
 };
 
-//console.log(busquedaNumeroAuto(1));
-let arrEstadisticas = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-let numeros = 0;
+//console.log(busquedaNumeroAutoPromise(7));
+busquedaNumeroAutoPromise(7)
+  .then((num) => {
+    console.log("logrado");
+    console.log(num);
+    //return busquedaNumeroAuto(8);
+  })
+  .catch(Promise.reject);
 
-for (numeros = 0; numeros < 5; numeros++) {}
+/* async function estadisticaNumeros() {
+  let arrEstadisticas = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  let numeros = 0;
 
+  try {
+    console.log("Ingresó al try");
+    let resultado = await busquedaNumeroAuto(numeros);
+    console.log(resultado);
+    arrEstadisticas[resultado]++;
+  } catch (errors) {
+    console.log(errors);
+  }
+  console.table(arrEstadisticas);
+}
+
+estadisticaNumeros(); */
+
+/* 
 function funcEstadisticaPromise(num) {
   return new Promise((resolve, reject) => {
     resolve(busquedaNumeroAuto(num));
@@ -145,6 +176,7 @@ funcEstadisticaPromise()
   })
   .catch()
   .finally();
+ */
 
 /* async function funcEstadistica() {
   try {
