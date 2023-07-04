@@ -1,16 +1,17 @@
 // Busca un número en un rango del 0 al 10000. Se ejecuta: node BuscarNumero.js [número]
 import { colorCLI } from "./colorCLI.js"; // Trae los códigos de color, para utilizarlos en la salida de consola.
 
-const userLiteral = process.argv[2];
-const userN = parseInt(userLiteral);
+const userN = parseInt(process.argv[2]);
+//const userN = (userLiteral);
 
 let count = 1,
   init = 0,
-  mid = 5000,
+  mid = 5000, // calcular para dar escalabilidad
   end = 10001;
 
-const verificaciones = () => {
-  if (userN < 0 || userN >= 10001)
+const verificaciones = (num) => {
+  // evitar usar una variable dentro del scope como "userN", mejor utilizar parámetros de la función "verificaciones(params)"
+  if (num < 0 || num >= 10001)
     return (
       console.log(),
       console.log(
@@ -20,7 +21,7 @@ const verificaciones = () => {
     );
 
   const regFloat = /\.|,/g;
-  if (regFloat.test(userLiteral))
+  if (regFloat.test(userN))
     return (
       console.log(),
       console.log(
@@ -30,7 +31,7 @@ const verificaciones = () => {
     );
 
   const regNum = /^\d+$/g;
-  if (!regNum.test(userLiteral))
+  if (!regNum.test(userN))
     return (
       console.log(),
       console.log(
@@ -48,7 +49,7 @@ const verificaciones = () => {
       process.exit(1)
     );
 
-  if (isNaN(userN) || typeof userN != "number")
+  if (isNaN(num) || typeof num != "number")
     return (
       console.log(),
       console.log(
@@ -103,15 +104,15 @@ const imprimir = (n) => {
       break;
   }
 };
-const busquedaNumero = () => {
-  verificaciones();
+const busquedaNumero = (nVer) => {
+  verificaciones(nVer);
 
-  while (mid != userN) {
-    if (userN < mid) {
+  while (mid != nVer) {
+    if (nVer < mid) {
       end = mid;
       mid = init + (end - init) / 2;
     } else {
-      // (userN > mid)
+      // (nVer > mid)
       init = mid;
       mid = init + (end - init) / 2;
     }
@@ -128,4 +129,4 @@ const busquedaNumero = () => {
   return imprimir(count);
 };
 
-busquedaNumero();
+busquedaNumero(userN);

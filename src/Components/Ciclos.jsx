@@ -73,6 +73,50 @@ const Ciclos = () => {
           </a>
         </button>
       </div>
+      <div>
+        <h3>Arreglos: Buscar Mayor con cliclo for</h3>
+        <button>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://stackblitz.com/edit/stackblitz-starters-eaz9uz?file=BuscarMayor.js"
+          >
+            Ver y ejecutar en StackBlitz
+          </a>
+        </button>
+
+        <button>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/sergioortegadev/ds-node"
+          >
+            Source & Doc in GitHub
+          </a>
+        </button>
+      </div>
+      <div>
+        <h3>Arreglos: Ordenar Menor Mayor</h3>
+        <button>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://stackblitz.com/edit/stackblitz-starters-eaz9uz?file=OrdenarMenorMayor.js"
+          >
+            Ver y ejecutar en StackBlitz
+          </a>
+        </button>
+
+        <button>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/sergioortegadev/ds-node"
+          >
+            Source & Doc in GitHub
+          </a>
+        </button>
+      </div>
     </div>
   );
 };
