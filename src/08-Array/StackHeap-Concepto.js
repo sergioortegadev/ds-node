@@ -1,3 +1,4 @@
+// Ejercicios con el concepto de guardado en memoria de datos, primitivos y objetos
 /* Solo referencia a Stack */
 let n1 = [7];
 let n2 = n1;
