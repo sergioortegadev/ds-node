@@ -17,6 +17,9 @@ const Home = () => {
       <button>
         <Link to="ciclos">Ciclos</Link>
       </button>
+      <button>
+        <Link to="array">Array</Link>
+      </button>
     </div>
   );
 };
