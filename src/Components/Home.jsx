@@ -20,6 +20,9 @@ const Home = () => {
       <button>
         <Link to="array">Array</Link>
       </button>
+      <button>
+        <Link to="functions">Functions</Link>
+      </button>
     </div>
   );
 };

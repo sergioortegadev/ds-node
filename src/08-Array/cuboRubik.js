@@ -35,7 +35,7 @@ export const Rubik = [
   ],
 ];
 
-console.log("Frente - arreglo 0 front");
+/* console.log("Frente - arreglo 0 front");
 console.table(Rubik[0]);
 console.log("Frente - arreglo 1 top");
 console.table(Rubik[1]);
@@ -46,7 +46,7 @@ console.table(Rubik[3]);
 console.log("Frente - arreglo 4 left");
 console.table(Rubik[4]);
 console.log("Frente - arreglo 5 back");
-console.table(Rubik[5]);
+console.table(Rubik[5]); */
 
 // Movimientos (siempre teniendo la cara frente de referencia, arreglo pos cero)
 export const mover = (parte, direccion, arreglo) => {
@@ -92,7 +92,7 @@ export const mover = (parte, direccion, arreglo) => {
           [arreglo[1][0][2], arreglo[1][1][2], arreglo[1][2][2]] = auxArr;
         } else {
         }
-        console.log("- - Modificado - -");
+        /* console.log("- - Modificado - -");
         console.log("- - Front - -");
         console.table(arreglo[0]);
         console.log("- - Top - -");
@@ -104,7 +104,7 @@ export const mover = (parte, direccion, arreglo) => {
         console.log("- - Left - -");
         console.table(arreglo[4]);
         console.log("- - Back - -");
-        console.table(arreglo[5]);
+        console.table(arreglo[5]); */
         break;
 
       default:
@@ -177,4 +177,4 @@ export const mover = (parte, direccion, arreglo) => {
   }
 };
 
-mover("top", "left", Rubik);
+// mover("top", "left", Rubik);

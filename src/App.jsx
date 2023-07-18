@@ -5,6 +5,7 @@ import Home from "./Components/Home";
 import Calc from "./Components/Calc";
 import Ciclos from "./Components/Ciclos";
 import Array from "./Components/Array";
+import Functions from "./Components/Functions";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/calc" element={<Calc />} />
           <Route path="/ciclos" element={<Ciclos />} />
           <Route path="/array" element={<Array />} />
+          <Route path="/functions" element={<Functions />} />
         </Routes>
       </HashRouter>
     </>

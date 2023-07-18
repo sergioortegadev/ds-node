@@ -45,3 +45,8 @@ let af = {
 
 af.mostrarNombre();
 /* REVISAR en arrow function el this hace referencia a la misma función */
+
+// Revisar esto de random, no funciona
+const randomFunc = (/* from = 2, to = 7 */) => Math.floor(Math.random());
+
+console.log(randomFunc(2, 7));

@@ -3,11 +3,12 @@
   --second-color: #323330;
   --code-font: "Courier New", Courier, monospace;
   font-size: 16px;
+  --pong-font: "VT323", monospace;
 }
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0rem;
   text-align: center;
   overflow-x: hidden;
 }
@@ -105,6 +106,7 @@ button {
 .codes p {
   font-family: var(--code-font);
 }
+/*  - - - Rubik - Array - - -  */
 .rubik {
   display: grid;
   justify-content: center;
@@ -147,4 +149,87 @@ button {
 }
 .cube-color-white {
   background-color: #fff;
+}
+
+/*  - - - Pong - Functions - - -  */
+.pong-container {
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 22rem;
+  height: 15rem;
+  background-color: #111111;
+  border-radius: 1rem;
+}
+.pong-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pong-game-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem;
+  height: 100%;
+  border: 10px solid #fff;
+  border-radius: 1rem;
+}
+.pong-display {
+  background-color: #111111;
+  position: relative;
+  top: -1rem;
+  width: 6rem;
+}
+.pong-display h2 {
+  padding: 0;
+  margin: 0;
+  font-family: var(--pong-font);
+}
+.pong-red {
+  z-index: 9;
+  width: 1rem;
+  height: 10rem;
+  border: 4px dashed #fff;
+  margin: 0;
+  padding: 0;
+}
+.pong-positions-grid {
+  position: relative;
+  top: -0.75rem;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 10px 1fr 10px;
+  grid-template-rows: repeat(7, 1fr);
+  height: 9rem;
+  width: 95%;
+  background-color: transparent;
+  padding: 0 0.25rem;
+}
+.posMaq1,
+.posMaq2,
+.posMaq3,
+.posMaq4,
+.posMaq5,
+.posMaq6,
+.posMaq7,
+.posUser1,
+.posUser2,
+.posUser3,
+.posUser4,
+.posUser5,
+.posUser6,
+.posUser7 {
+  color: transparent;
+}
+
+.ball {
+  position: relative;
+  margin: auto;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: transform 2s ease-in-out;
 }
