@@ -3,12 +3,14 @@ import { colorCLI } from "./colorCLI.js";
 const calcular = async (number) => {
   try {
     if (number % 3 === 0 && number % 5 === 0) {
-      return console.log(colorCLI.FgBlack, colorCLI.BgYellow, "FIZZBUZZ", colorCLI.Reset);
+      return "FIZZBUZZ";
     } else if (number % 3 === 0) {
-      return console.log(colorCLI.FgGreen, colorCLI.BgGray, "FIZZ", colorCLI.Reset);
+      return "FIZZ";
     } else if (number % 5 === 0) {
-      return console.log(colorCLI.FgRed, colorCLI.BgGray, "BUZZ", colorCLI.Reset);
-    } else console.log(number);
+      return "BUZZ";
+    } else {
+      return number;
+    } // ver abajo otra opción
   } catch (error) {
     console.log("Error : ", error);
   }
@@ -17,30 +19,33 @@ const calcular = async (number) => {
 const fizzbuzz = async (hasta) => {
   console.log("\n", colorCLI.Bright, colorCLI.BgBlue, "- - FIZZ BUZZ con Async Await - -", colorCLI.Reset, "\n");
   for (let index = 0; index <= hasta; index++) {
-    await calcular(index);
+    let resultado = await calcular(index);
+    console.log(resultado);
   }
-  console.log("\n", colorCLI.Bright, colorCLI.BgBlue, "- - FIZZ BUZZ con Finalizado - -", colorCLI.Reset, "\n");
+  console.log("\n", colorCLI.Bright, colorCLI.BgBlue, "- - FIZZ BUZZ Finalizado - -", colorCLI.Reset, "\n");
 };
 
 (async () => {
   let parametro = process.argv[2];
-  await fizzbuzz(parametro);
+  await fizzbuzz(parametro || 100);
 })();
 
-/* 
-  switch (number) {
-      case number % 3 === 0 && number % 5 === 0:
-        console.log(colorCLI.FgBlack, colorCLI.BgYellow, "FIZZBUZZ", colorCLI.Reset);
-        break;
-      case number % 3 === 0:
-        console.log(colorCLI.FgGreen, colorCLI.BgGray, "FIZZ", colorCLI.Reset);
-        break;
-      case number % 5 === 0:
-        console.log(colorCLI.FgRed, colorCLI.BgGray, "BUZZ", colorCLI.Reset);
-        break;
+// let resultado = console.log("hola"); // demostracion que el "console.log()" no retorna nada. Por eso en esta línea si imprime el "hola", pero no se guarda en la variable "resultado".
+// console.log(resultado); // Entonces cuando imprimimos lo que queríamos guardar, no hay nada, "undefined"
 
-      default:
-        console.log(number);
-        break;
+/*  - - Opcion del compañero Yamil - -
+Esta función recibe parámetros para procesar y retorna una promesa.
+
+function validateNumber(nro, result) {
+  return new Promise((resolve, reject) => {
+    try {
+      let result = "";
+      if (nro % 3 === 0) result += "Fizz";
+      if (nro % 5 === 0) result += "Buzz";
+      resolve(result || nro);
+    } catch (error) {
+      console.log(error);
     }
-*/
+  });
+}
+ */
