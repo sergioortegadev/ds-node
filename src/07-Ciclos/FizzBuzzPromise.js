@@ -23,10 +23,12 @@ const fizzbuzz = (hasta) => {
         console.log(`Error inesperado: ${error}`);
       });
   }
-  console.log("- - FIZZ BUZZ con Finalizado - -");
+  setTimeout(() => {
+    console.log("- - FIZZ BUZZ con Promise FINALIZADO- -");
+  }, 0);
 };
 
 (() => {
   let parametro = process.argv[2];
-  fizzbuzz(parametro);
+  fizzbuzz(parametro || 100);
 })();
