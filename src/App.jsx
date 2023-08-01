@@ -6,6 +6,7 @@ import Calc from "./Components/Calc";
 import Ciclos from "./Components/Ciclos";
 import Array from "./Components/Array";
 import Functions from "./Components/Functions";
+import PracticoHomeBanking from "./Components/PracticoHomeBanking";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/ciclos" element={<Ciclos />} />
           <Route path="/array" element={<Array />} />
           <Route path="/functions" element={<Functions />} />
+          <Route path="/homebanking" element={<PracticoHomeBanking />} />
         </Routes>
       </HashRouter>
     </>

@@ -45,15 +45,66 @@ empleados.push({
 console.log(empleados);
 console.log(empleados[0].loguearse());
 
-/*  - - - TAREA - - - - */
-// for n vueltas
-// array.push() meter
-// Hacer un array de objetos, que almacene personas, y tiene que tener nombre, apellido, edad (random 1-100).
-// que me muestre los mayores de 18 años
-// se podría usar filter() en lugar de un for
-// se podría usar json placeholder API, agregarle edades.
+/*  - - - - Más Notas Object - - -  */
+const person = () =>
+  new Object({
+    name: "Sergio Ortega",
+    edad: 42,
+    profesion: "developer",
+  });
+let arreglo = Array(1).fill(person());
+console.log(arreglo);
 
-// Ir pensando si se hará el ejercicio de Truco o Sudoku
-// libreria npm data generator
+/*  == Funciones Prototipicas ==  */
 
-// Probar la librería three js cubos en 3D
+// -------- Sin "new"----------
+Object.prototype.acelerar = function acelerar(cuanto) {
+  console.log(`  Acelero a ${cuanto}km/h  `);
+};
+
+function car(marca, modelo) {
+  return {
+    marca,
+    modelo,
+  };
+}
+
+car2.prototype.indicadorCombustible = function () {
+  return this.tanque;
+};
+const miCorolla = car("Toyota", "Corolla");
+
+console.log(typeof miCorolla);
+miCorolla.tanque = 40;
+console.log(miCorolla);
+miCorolla.acelerar(100);
+miCorolla.indicadorCombustible;
+
+// -------- Con constructor "new"----------
+
+function car2(marca, modelo, maxVel) {
+  (this.marca = marca), (this.modelo = modelo);
+  this.maxVel = maxVel;
+  this.isVeloz = this.isFast;
+
+  this.mostrarMaxVel = function () {
+    return this.maxVel;
+  };
+  this.isFast = function () {
+    if (this.maxVel > 250) {
+      return console.log("es veloz");
+    } else return console.log("no es veloz");
+  };
+}
+
+const miJeep = new car2("Jeep", "Compass", 350);
+
+console.log(typeof miCorolla);
+miJeep.tanque = 52;
+console.log(miJeep);
+miJeep.acelerar(120);
+console.log(miJeep.indicadorCombustible());
+console.log(miJeep.maxVel);
+console.log(miJeep.mostrarMaxVel());
+console.log(miJeep.isFast());
+//console.log(miJeep.isVeloz());

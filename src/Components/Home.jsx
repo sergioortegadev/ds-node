@@ -23,6 +23,9 @@ const Home = () => {
       <button>
         <Link to="functions">Functions</Link>
       </button>
+      <button>
+        <Link to="HomeBanking">Home Banking</Link>
+      </button>
     </div>
   );
 };
