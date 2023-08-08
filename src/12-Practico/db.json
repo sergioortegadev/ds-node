@@ -1,0 +1,112 @@
+{
+  "users": [
+    {
+      "id": 23253698749,
+      "typeUser": "admin",
+      "user": "sergioadmin",
+      "firstName": "Sergio",
+      "lastName": "Ortega",
+      "mail": "sergiodev@mail.com",
+      "accounts": []
+    },
+    {
+      "id": 23124578969,
+      "typeUser": "customer",
+      "user": "marge",
+      "firstName": "Marge",
+      "lastName": "Simpsons",
+      "mail": "marge@mail.com",
+      "accounts": []
+    },
+    {
+      "id": 23326598749,
+      "typeUser": "customer",
+      "user": "homero",
+      "firstName": "Homero",
+      "lastName": "Simpsons",
+      "mail": "homero@mail.com",
+      "accounts": [
+        {
+          "accountId": 115,
+          "currency": "$",
+          "typeAccount": "ca",
+          "balance": 1000,
+          "transfer": []
+        }
+      ]
+    },
+    {
+      "id": 23578965129,
+      "typeUser": "customer",
+      "user": "maggy",
+      "firstName": "Maggy",
+      "lastName": "Simpsons",
+      "mail": "maggy@mail.com",
+      "accounts": []
+    },
+    {
+      "id": 23357896459,
+      "typeUser": "customer",
+      "user": "bart",
+      "firstName": "Bart",
+      "lastName": "Simpsons",
+      "mail": "bart@mail.com",
+      "accounts": []
+    },
+    {
+      "id": 23405897129,
+      "typeUser": "customer",
+      "user": "lisa",
+      "firstName": "Lisa",
+      "lastName": "Simpsons",
+      "mail": "lisa@mail.com",
+      "accounts": [
+        {
+          "accountId": 119,
+          "currency": "$",
+          "typeAccount": "ca",
+          "balance": 1000,
+          "transfer": []
+        }
+      ]
+    },
+    {
+      "id": 23124578969,
+      "typeUser": "customer",
+      "user": "jhon",
+      "firstName": "Jhon",
+      "lastName": "Perk",
+      "mail": "jhonperk@mail.com",
+      "accounts": [
+        {
+          "accountId": 123,
+          "currency": "$",
+          "typeAccount": "ca",
+          "balance": 1000,
+          "transfer": []
+        },
+        {
+          "accountId": 124,
+          "currency": "$",
+          "typeAccount": "cc",
+          "balance": 500,
+          "transfer": []
+        },
+        {
+          "accountId": 125,
+          "currency": "U$D",
+          "typeAccount": "ca",
+          "balance": 200,
+          "transfer": []
+        },
+        {
+          "accountId": 126,
+          "currency": "U$D",
+          "typeAccount": "cc",
+          "balance": 100,
+          "transfer": []
+        }
+      ]
+    }
+  ]
+}

@@ -233,3 +233,58 @@ button {
   background-color: #fff;
   transition: transform 2s ease-in-out;
 }
+
+/*  - - - - Home Banking - - - -  */
+.homebanking {
+  width: 90vw;
+  height: 96vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.homebanking h1,
+.homebanking h2,
+.homebanking h3,
+.homebanking h4,
+.homebanking h5,
+.homebanking h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.header-homebanking,
+.main-homebanking,
+.footer-homebanking {
+  padding: 0 2rem;
+  border: 1px solid #444;
+  border-radius: 1rem;
+  background-color: #2d2d2d;
+}
+.header-homebanking {
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #4074e6;
+  font-size: 170%;
+}
+.main-homebanking {
+  height: 73vh;
+  background-color: #2d2d2d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-hb-teclado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+.main-hb-teclado-img {
+  width: 17rem;
+}
+.footer-homebanking {
+  height: 10vh;
+  background-color: #2d2d2d;
+}
