@@ -288,3 +288,52 @@ button {
   height: 10vh;
   background-color: #2d2d2d;
 }
+/* - - Calc MVC - - */
+.calc {
+  margin-top: 2rem;
+  border: 1.5px solid #fff;
+  border-radius: 1.7rem;
+}
+.calc-display {
+  display: flex;
+  justify-content: space-between;
+  width: 86%;
+  height: 4rem;
+  border: 1px solid #fff;
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+.calc-display-2 {
+  font-size: 1.8rem;
+  align-self: flex-end;
+}
+.calc-keyboard {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  padding: 1rem;
+}
+.calc-keyboard-spaces {
+  font-size: 2rem;
+  padding: 0.4rem 0.25rem 0.6rem;
+  border-radius: 100%;
+  border: 0px solid #fff;
+}
+.calc-keys {
+  border: 1px solid #fff;
+  border-radius: 100%;
+  padding: 0.4rem 1rem 0.6rem;
+}
+.logs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 24rem;
+}
+.logs-pad {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9rem;
+}

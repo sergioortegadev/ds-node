@@ -26,6 +26,9 @@ const Home = () => {
       <button>
         <Link to="HomeBanking">Home Banking</Link>
       </button>
+      <button>
+        <Link to="calcmvc">Calc MVC</Link>
+      </button>
     </div>
   );
 };
