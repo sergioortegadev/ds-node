@@ -1,17 +1,11 @@
 import express from "express";
 import "dotenv/config";
+import usersRoutes from "./routes/users.js";
 
 const app = express();
+app.use(express.json());
 
-//const users = []
-
-app.get("/users", function (req, res) {
-  //res.send("te devuelvo todos los users"); // devuelve texto plano
-  res.json({
-    mensaje: "Te devuelvo los usuarios",
-    infoAdicional: "Otros datos adicionales",
-  });
-});
+app.use("/users", usersRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log(" - App funcionando ok - ");
