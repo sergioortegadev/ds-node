@@ -8,22 +8,27 @@ import Array from "./Components/Array";
 import Functions from "./Components/Functions";
 import PracticoHomeBanking from "./Components/PracticoHomeBanking";
 import CalcMVC from "./Components/CalcMVC";
+import ExpressCRUD from "./ExpressCRUD";
+import { NavProvider } from "./Components/ExpressCRUD/context/NavContext";
 
 function App() {
   return (
     <>
-      <HashRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/regexp" element={<RegExp />} />
-          <Route path="/calc" element={<Calc />} />
-          <Route path="/ciclos" element={<Ciclos />} />
-          <Route path="/array" element={<Array />} />
-          <Route path="/functions" element={<Functions />} />
-          <Route path="/homebanking" element={<PracticoHomeBanking />} />
-          <Route path="/calcmvc" element={<CalcMVC />} />
-        </Routes>
-      </HashRouter>
+      <NavProvider>
+        <HashRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/regexp" element={<RegExp />} />
+            <Route path="/calc" element={<Calc />} />
+            <Route path="/ciclos" element={<Ciclos />} />
+            <Route path="/array" element={<Array />} />
+            <Route path="/functions" element={<Functions />} />
+            <Route path="/homebanking" element={<PracticoHomeBanking />} />
+            <Route path="/calcmvc" element={<CalcMVC />} />
+            <Route path="/expresscrud" element={<ExpressCRUD />} />
+          </Routes>
+        </HashRouter>
+      </NavProvider>
     </>
   );
 }

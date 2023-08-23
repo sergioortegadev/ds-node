@@ -29,6 +29,9 @@ const Home = () => {
       <button>
         <Link to="calcmvc">Calc MVC</Link>
       </button>
+      <button>
+        <Link to="expresscrud">Express CRUD</Link>
+      </button>
     </div>
   );
 };

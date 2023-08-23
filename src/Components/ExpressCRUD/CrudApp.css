@@ -1,0 +1,325 @@
+/*  - - Crud Header - -  */
+.crud-header {
+  display: grid;
+  grid-template-columns: 1fr 8rem;
+  border: 1.5px solid #ccc;
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem 0.5rem 0;
+  margin: 0.5rem 0;
+}
+.crud-header h3 {
+  margin: 0;
+  padding: 0.5rem;
+}
+
+/*  - - - Add + Button - - - */
+.add-btn {
+  background-color: #1a1a1a;
+  color: #ccc;
+  border-radius: 0.75rem;
+}
+
+/*   - - - From - - -   */
+
+.read-the-docs {
+  color: #888;
+}
+
+.contenedor {
+  /* max-width: 100vw; 
+  margin: 0 0.5rem;
+  overflow-y: hidden;*/
+}
+.form-container {
+  margin: 1.5rem auto;
+  /* max-width: 1200px; */
+  background-color: #333;
+  border: 3px solid #11111150;
+  border-radius: 0.5rem;
+}
+.form-close-btn {
+  width: 3rem;
+  position: absolute;
+  right: 0.75rem;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.form label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+.form-input-and-dnd {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.form-inputs {
+  display: grid;
+  grid-template-rows: 4.5rem 1fr 4.5rem 3.5rem;
+  grid-template-columns: repeat(8, 1fr);
+  width: 60%;
+  min-width: 24rem;
+}
+.form label {
+  margin: 0.5rem 0;
+}
+.label-prodName {
+  grid-row: 1/2;
+  grid-column: 1/9;
+}
+.label-description {
+  grid-row: 2/3;
+  grid-column: 1/9;
+}
+.label-price {
+  grid-row: 3/4;
+  grid-column: 1/4;
+}
+.label-stock {
+  grid-row: 3/4;
+  grid-column: 5/9;
+}
+.label-weight {
+  grid-row: 4/5;
+  grid-column: 1/4;
+}
+.label-dimensions {
+  grid-row: 4/5;
+  grid-column: 5/9;
+}
+.form-dnd {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 100%;
+}
+.form-dnd img {
+  width: 100%;
+  max-width: 350px;
+  /* max-width: fit-content; */
+  object-fit: cover;
+}
+.form input,
+.form textarea {
+  width: 100%;
+  min-height: 85%;
+}
+
+.form > input,
+.form-input-btn-div {
+  padding: 0.5rem;
+  margin: 1rem;
+}
+.form-input-btn-div input {
+  font-size: 18px;
+  margin: 1rem;
+  padding: 0.5rem 1.5rem;
+  color: #646cff;
+  background-color: #1a1a1a;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+}
+.form-input-btn-div input:hover,
+.form-input-btn-div input:active {
+  color: #535bf2;
+  border: 1px solid #646cff;
+}
+.form-input-btn-div {
+  display: flex;
+  margin: 0 auto;
+}
+
+/*  - -  Tabla DB  - -  */
+
+.table {
+  margin: 0 auto;
+}
+.thead th {
+  padding: 0 0.5rem;
+}
+
+.figure-table-row {
+  max-height: 30px;
+}
+.figure-table-row td {
+  padding: 0.5rem;
+  border-top: 1px solid #ccc;
+}
+.foto-td img {
+  width: 50px;
+  height: 50px;
+  border-radius: 0.5rem;
+}
+.nombre-td {
+  text-align: left;
+}
+.precio-td {
+  display: block;
+  text-align: center;
+  font-weight: bolder;
+  min-width: max-content;
+}
+.btn-td button {
+  margin: 0.2rem;
+  font-size: 0.8rem;
+}
+
+/*  - - Cards DB - -  */
+
+.cards-conteneiner {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.figure-card-row {
+  display: grid;
+  grid-template-columns: 9.5rem 1fr;
+  width: 100%;
+  min-height: 9.5rem;
+  margin: 0.1rem;
+  border-bottom: 1px solid #666;
+}
+.foto-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.25rem;
+  width: 9rem;
+  position: relative;
+  overflow: hidden;
+}
+.foto-card img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  border-radius: 0.25rem;
+}
+.datos-div {
+  /* width: 50%; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 0.5rem 0.5rem;
+}
+.datos-nombre {
+  text-align: center;
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 400;
+  text-align: left;
+}
+.datos-precio {
+  display: block;
+  text-align: center;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  margin: 0;
+}
+.datos-btn-td button {
+  padding: 0.2rem 0.5rem;
+  margin: 0 0.25rem;
+  width: 2.5rem;
+  height: 1.5rem;
+  font-size: 0.75rem;
+  margin: 0.25rem;
+}
+
+/*  - -  Sin Datos  - -  */
+.sin-datos {
+  width: 90vw;
+  margin: 0 auto;
+  background-color: #922;
+}
+
+@media (min-width: 576px) {
+  .cards-conteneiner {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .figure-card-row {
+    width: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0.25rem;
+    border-radius: 0.25rem;
+    border: 0.25px solid #444;
+  }
+  .foto-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.25rem;
+    width: 90%;
+    padding-bottom: 105%;
+    position: relative;
+    /*   overflow-y: hidden;
+    z-index: -10; */
+  }
+  .foto-card img {
+    object-fit: cover;
+    width: 100%;
+    height: 10rem;
+    border-radius: 0.25rem;
+    position: absolute;
+  }
+  .datos-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 0.5rem 0.5rem;
+  }
+  .datos-nombre {
+    text-align: center;
+    font-size: 80%;
+    margin: 0;
+  }
+  .datos-precio {
+    display: block;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 125%;
+    margin: 0;
+  }
+  .datos-btn-td button {
+    margin: 0 0.25rem;
+    width: 2.5rem;
+    height: 1.5rem;
+    font-size: 0.75rem;
+  }
+}
+@media (min-width: 992px) {
+  .figure-card-row {
+    width: 16rem;
+  }
+  .foto-card img {
+    height: 16rem;
+  }
+  .datos-nombre {
+    font-size: 1.1rem;
+  }
+  .datos-precio {
+    font-size: 1.75rem;
+  }
+  .datos-btn-td button {
+    width: 4rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
