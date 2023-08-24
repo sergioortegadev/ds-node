@@ -30,6 +30,9 @@ const Home = () => {
         <Link to="calcmvc">Calc MVC</Link>
       </button>
       <button>
+        <Link to="expressinicial">Express Inicial</Link>
+      </button>
+      <button>
         <Link to="expresscrud">Express CRUD</Link>
       </button>
     </div>

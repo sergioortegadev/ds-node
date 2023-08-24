@@ -1,3 +1,4 @@
+// Esta app recibe consultas de Postman en el puerto configurado en .env
 import express from "express";
 import "dotenv/config";
 import usersRoutes from "./routes/users.js";

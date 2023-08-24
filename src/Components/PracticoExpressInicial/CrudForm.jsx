@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useContext } from "react";
-import NavContext from "./context/NavContext";
+//import NavContext from "./context/NavContext";
 
 const initialForm = {
   id: null,
@@ -9,20 +9,23 @@ const initialForm = {
   prodName: "",
   description: "",
   price: "",
+  ItemWeight: "",
+  ItemDimensionsLxWxH: "",
+  ItemSize: "",
+  Color: "",
   stock: "",
   images: "",
 };
 
 // eslint-disable-next-line react/prop-types
-const CrudFormEdit = ({ updateData, dataToEdit, setDataToEdit }) => {
+const CrudForm = ({ createData, dataToEdit, setDataToEdit }) => {
   const [form, setForm] = useState(initialForm);
 
-  const { openNav } = useContext(NavContext);
+  //const { openNav } = useContext(NavContext);
 
   useEffect(() => {
     if (dataToEdit) {
       setForm(dataToEdit);
-      openNav("edit");
     } else setForm(initialForm);
   }, [dataToEdit]);
 
@@ -89,7 +92,7 @@ const CrudFormEdit = ({ updateData, dataToEdit, setDataToEdit }) => {
       return;
     }
 
-    updateData(form);
+    createData(form);
 
     handleReset();
   };
@@ -149,12 +152,11 @@ const CrudFormEdit = ({ updateData, dataToEdit, setDataToEdit }) => {
                 <input
                   type="text"
                   name="ItemWeight"
-                  placeholder="Peso en gramos (g)"
+                  placeholder="Peso en gramos (agregar la 'g')"
                   onChange={handleChange}
                   value={form.ItemWeight}
                 />
               </label>
-
               <label className="label-dimensions">
                 Dimensiones
                 <input
@@ -187,13 +189,9 @@ const CrudFormEdit = ({ updateData, dataToEdit, setDataToEdit }) => {
          /> 
               */}
             </div>
-            <div className="form-dnd">
-              {form.images[0] ? (
-                <img src={form.images[0]} alt={form.prodName} />
-              ) : (
-                <img src="./src/Components/ExpressCRUD/assets/no-fotos.png" alt="no hay foto" />
-              )}
-            </div>
+            {/* <div className="form-dnd">
+              <img src="../src/assets/dnd.jpg" alt="drag and" />
+            </div> */}
           </div>
           <div className="form-input-btn-div">
             <input type="submit" value="Enviar" />
@@ -205,4 +203,4 @@ const CrudFormEdit = ({ updateData, dataToEdit, setDataToEdit }) => {
   );
 };
 
-export default CrudFormEdit;
+export default CrudForm;

@@ -10,6 +10,7 @@ import PracticoHomeBanking from "./Components/PracticoHomeBanking";
 import CalcMVC from "./Components/CalcMVC";
 import ExpressCRUD from "./ExpressCRUD";
 import { NavProvider } from "./Components/ExpressCRUD/context/NavContext";
+import PracticoExpressInicial from "./Components/PracticoExpressInicial";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/functions" element={<Functions />} />
             <Route path="/homebanking" element={<PracticoHomeBanking />} />
             <Route path="/calcmvc" element={<CalcMVC />} />
+            <Route path="/expressinicial" element={<PracticoExpressInicial />} />
             <Route path="/expresscrud" element={<ExpressCRUD />} />
           </Routes>
         </HashRouter>

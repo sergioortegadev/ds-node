@@ -9,6 +9,10 @@ const initialForm = {
   prodName: "",
   description: "",
   price: "",
+  ItemWeight: "",
+  ItemDimensionsLxWxH: "",
+  ItemSize: "",
+  Color: "",
   stock: "",
   images: "",
 };
@@ -77,12 +81,12 @@ const CrudForm = ({ createData, dataToEdit, setDataToEdit }) => {
     e.preventDefault();
 
     if (
-      /*  !form.category || */
-      !form.tags ||
       !form.prodName ||
       !form.description ||
       !form.price ||
-      !form.stock
+      !form.stock ||
+      !form.ItemWeight ||
+      !form.ItemDimensionsLxWxH
     ) {
       alert("Datos incompletos");
       return;

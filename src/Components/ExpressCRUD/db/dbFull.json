@@ -288,5 +288,84 @@
         "/src/Components/ExpressCRUD/product/10016-04.jpg"
       ]
     }
+  ],
+  "customer": [
+    {
+      "id": 1000,
+      "nombre": "",
+      "apellido": "",
+      "telefono": "",
+      "email": "",
+      "direccion": "",
+      "ciudad": "",
+      "provincia": 0,
+      "codPostal": 0,
+      "iva": 0,
+      "cuit": 0,
+      "empresa": ""
+    }
+  ],
+  "seller": [
+    {
+      "id": 1000,
+      "nombre": "",
+      "apellido": ""
+    }
+  ],
+  "prodCategory": [
+    { "id": 0, "name": "Notebook" },
+    { "id": 1, "name": "Accesorios Notebook y PC" },
+    { "id": 2, "name": "Celulares" },
+    { "id": 3, "name": "Celulares Accesorios" },
+    { "id": 4, "name": "Tablets" },
+    { "id": 5, "name": "Relojes" },
+    { "id": 6, "name": "Auriculares y Parlantes" },
+    { "id": 7, "name": "Wifi y Redes" },
+    { "id": 8, "name": "Impresoras" },
+    { "id": 9, "name": "Otros" }
+  ],
+  "customerIva": [
+    { "id": 0, "name": "" },
+    { "id": 1, "name": "Consumidor Final" },
+    { "id": 2, "name": "IVA Responsable Inscripto" },
+    { "id": 3, "name": "Responsable Monotributo" },
+    { "id": 4, "name": "IVA Sujeto Exento" },
+    { "id": 5, "name": "Sujeto No Categorizado" },
+    { "id": 6, "name": "Proveedor del Exterior" },
+    { "id": 7, "name": "Cliente del Exterior" },
+    { "id": 8, "name": "IVA Liberado - Ley Nº 19.640" },
+    { "id": 9, "name": "Monotributista Social" },
+    { "id": 10, "name": "IVA No Alcanzado" },
+    { "id": 11, "name": "Monotributista Trabajador Independiente" }
+  ],
+  "customerProvincia": [
+    { "id": 0, "name": "" },
+    { "id": 1, "name": "Córdoba" },
+    { "id": 2, "name": "Buenos Aires" },
+    { "id": 3, "name": "Catamarca" },
+    { "id": 4, "name": "Chaco" },
+    { "id": 5, "name": "Chubut" },
+    { "id": 6, "name": "CABA" },
+    { "id": 7, "name": "Corrientes" },
+    { "id": 8, "name": "Entre Ríos" },
+    { "id": 9, "name": "Formosa" },
+    { "id": 10, "name": "Jujuy" },
+    { "id": 11, "name": "La Pampa" },
+    { "id": 12, "name": "La Rioja" },
+    { "id": 13, "name": "Mendoza" },
+    { "id": 14, "name": "Misiones" },
+    { "id": 15, "name": "Neuquén" },
+    { "id": 16, "name": "Río Negro" },
+    { "id": 17, "name": "Salta" },
+    { "id": 18, "name": "San Juan" },
+    { "id": 19, "name": "San Luis" },
+    { "id": 20, "name": "Santa Cruz" },
+    { "id": 21, "name": "Santa Fe" },
+    { "id": 22, "name": "Santiago del Estero" },
+    {
+      "id": 23,
+      "name": "Tierra del Fuego, Antártida e Islas del Atlántico Sur"
+    },
+    { "id": 24, "name": "Tucumán" }
   ]
 }
