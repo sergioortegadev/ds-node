@@ -1,7 +1,3 @@
-/* import db from "../db/db.json" assert { type: "json" };
-
-export const product = db.product; */
-
 import "dotenv/config";
 import { readFileSync, writeFileSync } from "fs";
 
@@ -14,18 +10,15 @@ try {
 } catch (error) {
   throw new Error("▒ en la lectura de los registros ▒");
 }
-export default product.product;
+export default product.product; // Exporta el Array, que es valor del key product, en db.json
 
-export const addLog = (data) => {
-  const { product } = data;
+export const saveDB = (data, isPost) => {
+  //const { product } = data;
 
   //const time = Date.now();
 
-  let toFile = { product: product };
+  let toFile = { product: data };
+  //console.log(toFile);
 
   writeFileSync(process.env.DB, JSON.stringify(toFile));
-};
-
-export const sendProd = () => {
-  return product;
 };

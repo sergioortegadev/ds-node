@@ -1,4 +1,5 @@
 import product from "../model/productModel.js";
+import { saveDB } from "../model/productModel.js";
 
 const getProd = (res) => {
   res.status(200).json({
@@ -26,6 +27,9 @@ const postProd = (req, res) => {
     mensaje: `Producto: ${req.body.prodName} CREADO con éxito`, //
     product,
   });
+
+  // Escribe DB en archivo
+  saveDB(product, true);
 };
 
 const putProd = (req, res) => {
@@ -36,6 +40,9 @@ const putProd = (req, res) => {
     mensaje: `Producto: ${product[indice].prodName} ACTUALIZADO`,
     product,
   });
+
+  // Escribe DB en archivo
+  saveDB(product, false);
 };
 
 const deleteProd = (req, res) => {
@@ -47,6 +54,9 @@ const deleteProd = (req, res) => {
     mensaje: `Producto: ${prodEliminado} ELIMINADO!`,
     product,
   });
+
+  // Escribe DB en archivo
+  saveDB(product, false);
 };
 
 export default { getProd, getOneProd, postProd, putProd, deleteProd };
