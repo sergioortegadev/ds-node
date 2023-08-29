@@ -19,44 +19,41 @@ const getOneProd = (req, res) => {
 };
 
 const postProd = (req, res) => {
+  console.log(req.body);
   // El backend recibe del front estos datos (req), y devuelve el resultado (res) confirmando la acción.
-  product.push(req.body);
-  //console.log(req.body);
+
+  // Escribe DB en archivo, params: op, req, index, isPost
+  saveDB("post", req, false, true);
 
   res.status(201).json({
     mensaje: `Producto: ${req.body.prodName} CREADO con éxito`, //
     product,
   });
-
-  // Escribe DB en archivo
-  saveDB(product, true);
 };
 
 const putProd = (req, res) => {
   const indice = req.params.indice; // captura el indice ingresado por parámetro
-  product[indice] = req.body;
 
-  res.status(200).json({
+  // Escribe DB en archivo, params: op, req, index, isPost
+  saveDB("put", req, indice, false);
+
+  res.status(201).json({
     mensaje: `Producto: ${product[indice].prodName} ACTUALIZADO`,
     product,
   });
-
-  // Escribe DB en archivo
-  saveDB(product, false);
 };
 
 const deleteProd = (req, res) => {
   const indice = req.params.indice; // captura el indice ingresado por parámetro
   let prodEliminado = product[indice].prodName;
-  product.splice(indice, 1);
 
-  res.status(200).json({
+  // Escribe DB en archivo, params: op, req, index, isPost
+  saveDB("delete", req, indice, false);
+
+  res.status(201).json({
     mensaje: `Producto: ${prodEliminado} ELIMINADO!`,
     product,
   });
-
-  // Escribe DB en archivo
-  saveDB(product, false);
 };
 
 export default { getProd, getOneProd, postProd, putProd, deleteProd };

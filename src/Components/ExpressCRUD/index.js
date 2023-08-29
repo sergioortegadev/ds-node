@@ -13,7 +13,7 @@ app.use(userAuth);
 
 app.use(cors());
 
-app.use("/product", productRoutes);
+app.use("/v1/product", productRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log(chakl.green(" ░▒▓ - Backend funcionando ok - ▓▒░"));

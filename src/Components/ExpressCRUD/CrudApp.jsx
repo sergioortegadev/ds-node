@@ -20,9 +20,9 @@ const CrudApp = () => {
 
   const [dataToEdit, setDataToEdit] = useState(null);
 
-  // Datos de Conexión con Servidor Node - Express, a través del "helper":
+  // Datos de Conexión con Servidor Node - Express, a través del "helper" y variable de entorno:
   let api = helpHttp();
-  let url = "http://192.168.100.140:5566/product";
+  let url = "http://192.168.100.140:5566/v1/product";
 
   // UseEffect que traerá los datos de la DB
   useEffect(() => {
@@ -34,7 +34,8 @@ const CrudApp = () => {
   }, []);
 
   const createData = (form) => {
-    // Nuevo id: se recorre la db y se busca el sigiente número
+    console.log(form);
+    /*  // Nuevo id: se recorre la db y se busca el sigiente número
     let idMayor = 1;
     db.forEach((el) => {
       if (el.id >= idMayor) {
@@ -42,7 +43,7 @@ const CrudApp = () => {
       }
     });
     idMayor++;
-    form.id = idMayor;
+    form.id = idMayor; */
 
     api.post(url, { body: form }).then((res) => {
       console.log(res);
