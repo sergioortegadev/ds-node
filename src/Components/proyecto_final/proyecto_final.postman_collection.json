@@ -1,0 +1,120 @@
+{
+  "info": {
+    "_postman_id": "5481c043-fbd7-43a9-a708-f9569bcf347d",
+    "name": "proyecto_final",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "21928800"
+  },
+  "item": [
+    {
+      "name": "users",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": ["pm.test('users getAll', () => {", "    pm.response.to.have.status(200)", "})"],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}users",
+          "host": ["{{base_url}}users"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "users/id",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": ["pm.test('users getAll', () => {", "    pm.response.to.have.status(200)", "})"],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}users/{{user_id}}",
+          "host": ["{{base_url}}users"],
+          "path": ["{{user_id}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "users",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('users add', () => {",
+              "    pm.response.to.have.status(201)",
+              "    const {user, user_id} = pm.response.json()",
+              "    pm.environment.set('user_id', user_id)",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"firstname\": \"{{$randomFirstName}}\",\n    \"lastname\": \"{{$randomLastName}}\",\n    \"email\": \"{{$randomEmail}}\"    \n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}users",
+          "host": ["{{base_url}}users"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "users",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": ["pm.test('users add', () => {", "    pm.response.to.have.status(200)", "})"],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"firstname\": \"{{$randomFirstName}}\",\n    \"lastname\": \"{{$randomLastName}}\",\n    \"email\": \"{{$randomEmail}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}users/{{$randomInt}}",
+          "host": ["{{base_url}}users"],
+          "path": ["{{$randomInt}}"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
