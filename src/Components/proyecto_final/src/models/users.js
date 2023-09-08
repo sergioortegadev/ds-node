@@ -4,6 +4,7 @@ const ObjectId = mongoose.Types.ObjectId;
 let users = [];
 
 const usersSchema = new mongoose.Schema({
+  filenumber: { type: Number, required: true, unique: true }, // ¿Como poner unicos? es aquí o en otra parte?
   firstname: { type: String, required: true, lowercase: true },
   lastname: String,
   email: String,

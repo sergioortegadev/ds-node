@@ -9,5 +9,5 @@ const usersRouter = require("./routes/users");
 app.use("/users", usersRouter);
 
 app.listen(process.env.PORT, function () {
-  console.log(`app connected on ${process.env.PORT} port`);
+  console.log(`▒░ APP connected on port: ${process.env.PORT} ░▒`);
 });

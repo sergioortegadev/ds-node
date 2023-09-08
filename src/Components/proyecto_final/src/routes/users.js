@@ -51,9 +51,11 @@ router.put("/:id", userMiddleware.hasId, async function (req, res) {
   try {
     const id = req.params.id;
     const users = await usersController.userUpdate(id, req.body);
+    const userUpdated = await usersController.userShow(id);
 
     res.status(200).json({
-      mensaje: `el usuario ha sido actualizado`,
+      mensaje: `el usuario ha sido actualizado, el nuevo nombre es: ${req.body.firstname}`,
+      userUpdated: userUpdated,
     });
   } catch (error) {
     res.status(404).json({

@@ -13,7 +13,7 @@ mongoose.connection.on("error", () => {
   console.error.bind(console, "Error de conexión:");
 });
 mongoose.connection.once("open", () => {
-  console.log("Conexión exitosa con la base de datos.");
+  console.log(`░▒▓ Conexión exitosa con la base de datos ▓▒░`);
 });
 
 module.exports = mongoose;
