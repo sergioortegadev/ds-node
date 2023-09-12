@@ -17,6 +17,20 @@ router.get("/", async function (req, res) {
   }
 });
 
+router.get("/auth", userMiddleware.auth, async function (req, res) {
+  try {
+    const username = req.params.username;
+    res.status(200).json({
+      mensaje: "Usuario autenticado con exitosamente",
+      user: username,
+    });
+  } catch (error) {
+    res.status(403).json({
+      mensaje: "Usuario o password incorrecto",
+    });
+  }
+});
+
 router.get("/:id", userMiddleware.hasId, async function (req, res) {
   try {
     const id = req.params.id;

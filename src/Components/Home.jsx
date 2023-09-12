@@ -35,6 +35,9 @@ const Home = () => {
       <button>
         <Link to="expresscrud">Express CRUD</Link>
       </button>
+      <button>
+        <Link to="login">Login</Link>
+      </button>
     </div>
   );
 };

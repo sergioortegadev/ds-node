@@ -5,10 +5,11 @@ let users = [];
 
 const usersSchema = new mongoose.Schema({
   filenumber: { type: Number, required: true, unique: true }, // ¿Como poner unicos? es aquí o en otra parte?
-  firstname: { type: String, required: true, lowercase: true },
+  username: { type: String, required: true, lowercase: true },
+  password: { type: String, required: true },
+  firstname: { type: String, required: true },
   lastname: String,
-  email: String,
-  age: Number,
+  email: { type: String, required: true },
 });
 
 const Users = mongoose.model("Users", usersSchema);
@@ -28,6 +29,10 @@ async function get(id) {
   return await Users.find(filter);
 }
 
+async function getUser(user) {
+  return await Users.find({ username: user }); // usar funcion .findOne // ver video 21:30
+}
+
 async function update(id, data) {
   try {
     return await Users.findByIdAndUpdate(new ObjectId(id), data);
@@ -44,4 +49,4 @@ async function del(id) {
   }
 }
 
-module.exports = { add, get, update, del };
+module.exports = { add, get, getUser, update, del };

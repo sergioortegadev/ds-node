@@ -11,6 +11,7 @@ import CalcMVC from "./Components/CalcMVC";
 import ExpressCRUD from "./ExpressCRUD";
 import { NavProvider } from "./Components/ExpressCRUD/context/NavContext";
 import PracticoExpressInicial from "./Components/PracticoExpressInicial";
+import Login from "./Components/Login";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/calcmvc" element={<CalcMVC />} />
             <Route path="/expressinicial" element={<PracticoExpressInicial />} />
             <Route path="/expresscrud" element={<ExpressCRUD />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </HashRouter>
       </NavProvider>
