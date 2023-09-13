@@ -19,14 +19,17 @@ router.get("/", async function (req, res) {
 
 router.get("/auth", userMiddleware.auth, async function (req, res) {
   try {
-    const username = req.params.username;
+    const { username, password } = req.body;
+    // const username = req.params.username;
+
+    let msj = await usersController.userAuth(username, password);
+
     res.status(200).json({
-      mensaje: "Usuario autenticado con exitosamente",
-      user: username,
+      mensaje: msj,
     });
   } catch (error) {
-    res.status(403).json({
-      mensaje: "Usuario o password incorrecto",
+    res.status(500).json({
+      mensaje: error,
     });
   }
 });

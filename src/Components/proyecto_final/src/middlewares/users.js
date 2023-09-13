@@ -27,7 +27,9 @@ const auth = async (req, res, next) => {
     console.log(`No ingresó toda la data (${req.body})`);
     return res.status(401).json({ msj: "falta data necesaria para loguearse" });
   }
-  let user = await usersController.userAuth(username); // acá next()     // esto va al controller
+  next(); // acá next()
+  /* 
+  let user = await usersController.userAuth(username);     // esto va al controller
 
   if (user[0] == undefined) {
     console.log(` » No se encontró el usuario: ${req.body.username}`);
@@ -46,7 +48,8 @@ const auth = async (req, res, next) => {
   } catch (error) {
     console.log(error);
   }
-  next();
+
+ */
 };
 
 module.exports = { hasId, add, auth };
