@@ -52,11 +52,14 @@ router.get("/:id", userMiddleware.hasId, async function (req, res) {
 router.post("/", userMiddleware.add, async function (req, res) {
   try {
     const data = await usersController.userAdd(req.body);
-
-    res.status(201).json({
-      mensaje: "El user " + req.body.firstname + " ha sido agregado",
-      user: data,
-    });
+    data !== undefined
+      ? res.status(201).json({
+          mensaje: `el usuario ${data.username} con ID: ${data.id} se agregó con éxito.`,
+          user: data,
+        })
+      : res.status(201).json({
+          mensaje: ` ▒ El nombre de usuario ya esta registrado, elija otro.`,
+        });
   } catch (error) {
     res.status(404).json({
       mensaje: error,
@@ -71,7 +74,7 @@ router.put("/:id", userMiddleware.hasId, async function (req, res) {
     const userUpdated = await usersController.userShow(id);
 
     res.status(200).json({
-      mensaje: `el usuario ha sido actualizado, el nuevo nombre es: ${req.body.firstname}`,
+      mensaje: `el usuario con ID:  ${users.id} ha sido actualizado`,
       userUpdated: userUpdated,
     });
   } catch (error) {
@@ -87,7 +90,7 @@ router.delete("/:id", userMiddleware.hasId, async function (req, res) {
     const users = await usersController.userDelete(id);
 
     res.status(200).json({
-      mensaje: `el usuario ha sido eliminado`,
+      mensaje: `el usuario con ID: ${id} ha sido eliminado`,
     });
   } catch (error) {
     res.status(404).json({

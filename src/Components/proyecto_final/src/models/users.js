@@ -1,15 +1,16 @@
 const mongoose = require("../config/mongo");
 const ObjectId = mongoose.Types.ObjectId;
 
-let users = [];
+//let users = [];
 
 const usersSchema = new mongoose.Schema({
-  filenumber: { type: Number, required: true, unique: true }, // ¿Como poner unicos? es aquí o en otra parte?
-  username: { type: String, required: true, lowercase: true },
+  admin: Boolean,
+  filenumber: { type: Number, required: true, unique: true },
+  username: { type: String, required: true, lowercase: true, unique: true },
   password: { type: String, required: true },
   firstname: { type: String, required: true },
   lastname: String,
-  email: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
 });
 
 const Users = mongoose.model("Users", usersSchema);

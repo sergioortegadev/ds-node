@@ -2,7 +2,17 @@ const usersModel = require("../models/users");
 
 async function userAdd(data) {
   try {
-    return await usersModel.add(data);
+    // Primero verifica si el datos repite algún valor único en la DB.
+    let userdb = await usersModel.getUser(data.username);
+    if (userdb[0] !== undefined) {
+      console.log(` ▒  » Log - El usuario: ${data.username} ya esta registrado - No se pudo agregar nuevo usuario`);
+      return;
+    }
+
+    // Verificados los únicos procede a registrar nuevo dato
+    let newUser = await usersModel.add(data);
+    console.log(` » Log - user: ${newUser.username}, con ID: ${newUser.id} Agregado ok`);
+    return newUser;
   } catch (error) {
     console.error(error);
   }
@@ -47,10 +57,12 @@ async function userAuth(username, password) {
 }
 
 async function userUpdate(id, data) {
+  console.log(` » Log - user: ${id} Actualizado`);
   return await usersModel.update(id, data);
 }
 
 async function userDelete(id) {
+  console.log(` » Log - user: ${id} Eliminado`);
   return await usersModel.del(id);
 }
 
