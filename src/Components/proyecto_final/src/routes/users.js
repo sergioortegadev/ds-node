@@ -1,7 +1,7 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const usersController = require("../controllers/users");
-const userMiddleware = require("../middlewares/users");
+import usersController from "../controllers/users.js";
+import userMiddleware from "../middlewares/users.js";
 
 router.get("/", async function (req, res) {
   try {
@@ -99,4 +99,4 @@ router.delete("/:id", userMiddleware.hasId, async function (req, res) {
   }
 });
 
-module.exports = router;
+export default router;

@@ -1,4 +1,4 @@
-const mongoose = require("../config/mongo");
+import mongoose from "../config/mongo.js";
 
 const logsSchema = new mongoose.Schema(
   {
@@ -23,7 +23,8 @@ async function add(data) {
 }
 
 async function all() {
-  return await logs.count();
+  return await Logs.count();
 }
 
-module.exports = { add, all };
+const logsModel = { add, all };
+export default logsModel;

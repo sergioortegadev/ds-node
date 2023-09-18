@@ -1,13 +1,13 @@
-require("dotenv").config();
-const express = require("express");
-const logger = require("./middlewares/global");
+import "dotenv/config";
+import express from "express";
+import logger from "./middlewares/global.js";
 const app = express();
 app.use(express.json());
 app.use(logger);
 
-const usersRouter = require("./routes/users");
+import usersRouter from "./routes/users.js";
 app.use("/users", usersRouter);
 
 app.listen(process.env.PORT, function () {
-  console.log(`▒░ APP connected on port: ${process.env.PORT} ░▒`);
+  console.log(`  ▒░ APP funcionando ok en puerto: ${process.env.PORT} ░▒`);
 });

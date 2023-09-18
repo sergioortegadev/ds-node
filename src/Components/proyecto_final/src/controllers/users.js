@@ -1,4 +1,4 @@
-const usersModel = require("../models/users");
+import usersModel from "../models/users.js";
 
 async function userAdd(data) {
   try {
@@ -66,4 +66,5 @@ async function userDelete(id) {
   return await usersModel.del(id);
 }
 
-module.exports = { userAdd, userShow, userAuth, userUpdate, userDelete };
+const usersController = { userAdd, userShow, userAuth, userUpdate, userDelete };
+export default usersController;

@@ -1,4 +1,4 @@
-const mongoose = require("../config/mongo");
+import mongoose from "../config/mongo.js";
 const ObjectId = mongoose.Types.ObjectId;
 
 //let users = [];
@@ -50,4 +50,5 @@ async function del(id) {
   }
 }
 
-module.exports = { add, get, getUser, update, del };
+const usersModel = { add, get, getUser, update, del };
+export default usersModel;

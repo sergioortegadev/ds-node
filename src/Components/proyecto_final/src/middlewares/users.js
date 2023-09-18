@@ -1,4 +1,4 @@
-const usersController = require("../controllers/users");
+//import usersController from "../controllers/users";
 
 const hasId = (req, res, next) => {
   const id = req.params.id;
@@ -30,4 +30,5 @@ const auth = async (req, res, next) => {
   next();
 };
 
-module.exports = { hasId, add, auth };
+const userMiddleware = { hasId, add, auth };
+export default userMiddleware;

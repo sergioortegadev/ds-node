@@ -1,7 +1,7 @@
-const logsModel = require("../models/logs");
+import logsModel from "../models/logs.js";
 const logger = (req, res, next) => {
   logsModel.add(req);
   next();
 };
 
-module.exports = logger;
+export default logger;
