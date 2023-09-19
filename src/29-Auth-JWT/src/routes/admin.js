@@ -1,10 +1,12 @@
 import express from "express";
 const router = express.Router();
-import userController from "../controllers/users.js";
+import adminController from "../controllers/admin.js";
 import logged from "../middleware/logged.js";
+import admin from "../middleware/admin.js";
 
 router.use(logged);
+router.use(admin);
 
-router.get("/profile", userController.profile);
+router.get("/", adminController.get);
 
 export default router;
