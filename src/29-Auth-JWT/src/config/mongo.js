@@ -12,12 +12,12 @@ mongoose.connect(process.env.MONGO_URI, {
 const db = mongoose.connection;
 
 db.once("error", () => {
-  console.error("   XXX - Error de conexión:");
+  console.error("   XXX - Error de conexión - XXX");
   process.exit(1);
 });
 
 db.once("open", () => {
-  console.log("  >> Conexión exitosa con la base de datos.");
+  console.log("  ▒ >> Conexión exitosa con la base de datos.  ▒");
 });
 
 export default mongoose;
