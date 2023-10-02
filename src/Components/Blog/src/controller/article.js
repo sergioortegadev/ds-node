@@ -10,10 +10,9 @@ const articles = async (req, res) => {
 };
 
 const newArticle = async (req, res) => {
-  console.log("llega a new article");
   try {
-    let { title, slug, text, image, author } = req.body;
-    const newArticle = new ArticleModel({ title, slug, text, image, author });
+    let { title, slug, text, image, author, categories } = req.body;
+    const newArticle = new ArticleModel({ title, slug, text, image, author, categories });
     await newArticle.save();
     const articleReturned = await ArticleModel.findOne({ title: req.body.title });
 
