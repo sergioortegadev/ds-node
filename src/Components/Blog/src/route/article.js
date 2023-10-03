@@ -4,6 +4,8 @@ import articleController from "../controller/article.js";
 import logged from "../middleware/logged.js";
 router.get("/", articleController.articles);
 router.use(logged);
-router.post("/article", articleController.newArticle);
+router.post("/", articleController.newArticle);
+router.put("/", articleController.editArticle);
+router.delete("/", articleController.deleteArticle);
 
 export default router;

@@ -9,6 +9,8 @@ const articleSchema = new mongoose.Schema(
     text: { type: String, required: true },
     image: String,
     categories: [{ type: String }],
+    tags: [{ type: String }],
+    status: String,
   },
   { timestamps: true }
 );
