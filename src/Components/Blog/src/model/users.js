@@ -4,7 +4,7 @@ import bcrypt from "bcrypt";
 
 const usersSchema = new mongoose.Schema(
   {
-    admin: Boolean,
+    role: String, // admin || editor || author || subscriber
     active: Boolean,
     username: { type: String, required: true, index: { unique: true } },
     password: { type: String, required: true, select: false },

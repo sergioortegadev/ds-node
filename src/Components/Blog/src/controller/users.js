@@ -9,4 +9,13 @@ const profile = async (req, res) => {
   }
 };
 
-export default { profile };
+const allUsers = async (req, res) => {
+  try {
+    const users = await UserModel.find();
+    return res.status(200).json({ message: " > > Todos los usuarios < <", users });
+  } catch (error) {
+    return res.status(500).json({ message: " X - Error inesperado al traer todos los usuarios de la base - X" });
+  }
+};
+
+export default { profile, allUsers };

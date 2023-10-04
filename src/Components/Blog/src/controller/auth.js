@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 const register = async (req, res) => {
   try {
     let { username, password, mail, firstname, lastname } = req.body;
-    const newUser = new UserModel({ admin: false, active: true, username, password, mail, firstname, lastname });
+    const newUser = new UserModel({ role: "subscriber", active: true, username, password, mail, firstname, lastname });
     await newUser.save();
     const userReturned = await UserModel.findOne({ username: req.body.username });
 
@@ -20,14 +20,14 @@ const login = async (req, res) => {
   try {
     let { username, password } = req.body;
 
-    const user = await UserModel.findOne({ username: username }).select("_id admin username password active");
+    const user = await UserModel.findOne({ username: username }).select("_id role username password active");
     if (!user) return res.status(401).json({ message: "XXX - Credenciales inválidas - XXX" });
 
     let logged = await user.comparePassword(password);
     if (!logged) return res.status(401).json({ message: "XXX - Credenciales inválidas - XXX" });
 
     const JWToken = jwt.sign(
-      { username: user.username, id: user._id, admin: user.admin, active: user.active },
+      { username: user.username, id: user._id, role: user.role, active: user.active },
       process.env.TOKEN_SECRET,
       { expiresIn: 60 * 60 * 24 * 30 }
     );
