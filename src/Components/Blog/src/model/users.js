@@ -11,6 +11,7 @@ const usersSchema = new mongoose.Schema(
     mail: { type: String, required: true, index: { unique: true } },
     firstname: String,
     lastname: String,
+    image: String,
   },
   { timestamps: true }
 );

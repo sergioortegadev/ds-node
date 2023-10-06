@@ -6,6 +6,7 @@ import admin from "../middleware/admin.js";
 
 router.use(logged);
 router.get("/profile", userController.profile);
+router.put("/", userController.updateUser);
 
 router.use(admin);
 router.get("/allUsers", userController.allUsers);

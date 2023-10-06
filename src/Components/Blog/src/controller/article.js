@@ -34,6 +34,7 @@ const newArticle = async (req, res) => {
     return res.status(500).json({ message: "XXX - Error inesperado al agregar artículo - XXX" });
   }
 };
+
 const editArticle = async (req, res) => {
   const article = await ArticleModel.findOne({ _id: req.body._id });
 

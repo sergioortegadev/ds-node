@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 
 const logged = async (req, res, next) => {
   try {
-    if (!req.user.admin) return res.status(403).json({ message: "XXX - Acceso no autorizado - XXX" });
+    if (req.user.role !== "admin") return res.status(403).json({ message: "XXX - Acceso no autorizado - XXX" });
 
     next();
   } catch (error) {
@@ -12,14 +12,10 @@ const logged = async (req, res, next) => {
 };
 
 const dataFromToken = async (token) => {
-  try {
-    return jwt.verify(token, process.env.TOKEN_SECRET, (err, data) => {
-      if (err) return err;
-      return data;
-    });
-  } catch (error) {
-    throw error;
-  }
+  return jwt.verify(token, process.env.TOKEN_SECRET, (err, data) => {
+    if (err) return err;
+    return data;
+  });
 };
 
 export default logged;

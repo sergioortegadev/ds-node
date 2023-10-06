@@ -5,7 +5,16 @@ import jwt from "jsonwebtoken";
 const register = async (req, res) => {
   try {
     let { username, password, mail, firstname, lastname } = req.body;
-    const newUser = new UserModel({ role: "subscriber", active: true, username, password, mail, firstname, lastname });
+    const newUser = new UserModel({
+      role: "subscriber",
+      active: true,
+      username,
+      password,
+      mail,
+      firstname,
+      lastname,
+      image: "../assets/no-photo.jpg",
+    });
     await newUser.save();
     const userReturned = await UserModel.findOne({ username: req.body.username });
 

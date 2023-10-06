@@ -8,5 +8,6 @@ router.use(logged);
 router.use(admin);
 
 router.get("/", adminController.get);
+router.delete("/", adminController.deleteUser);
 
 export default router;
