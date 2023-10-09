@@ -10,6 +10,9 @@ const get = async (req, res) => {
 
 const deleteUser = async (req, res) => {
   const user = await UserModel.findOne({ username: req.body.username });
+  if (user.role === "admin")
+    return res.status(400).json({ message: "XXX - Error no es posible eliminar user 'administrador' - XXX" });
+
   if (user) {
     try {
       await UserModel.findOneAndDelete({ username: req.body.username });

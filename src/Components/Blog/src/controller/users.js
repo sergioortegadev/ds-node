@@ -10,14 +10,14 @@ const profile = async (req, res) => {
 };
 
 const updateUser = async (req, res) => {
-  const user = await UserModel.findOne({ username: req.body.username });
+  let { _id, username, firstname, lastname, mail, image } = req.body;
+  const user = await UserModel.findOne({ _id });
 
   if (user) {
     try {
-      let { firstname, lastname, mail, image } = req.body;
-      await UserModel.findOneAndUpdate({ username: req.body.username }, { firstname, lastname, mail, image });
+      await UserModel.findOneAndUpdate({ _id }, { username, firstname, lastname, mail, image });
 
-      const userModified = await UserModel.findOne({ username: req.body.username });
+      const userModified = await UserModel.findOne({ _id });
 
       /* await article.save(); // También funciona así, sin el new Article */
 
@@ -25,7 +25,12 @@ const updateUser = async (req, res) => {
         .status(201)
         .json({ message: `El usuario ${userModified.username} modificado con exito.`, userModified });
     } catch (error) {
-      console.log(error);
+      if (error.code === 11000 && error.keyPattern.mail) {
+        return res.status(400).json({ message: "XXX - Mail ya registrado, intente recuperar contraseña - XXX" });
+      }
+      if (error.code === 11000 && error.keyPattern.username) {
+        return res.status(400).json({ message: "XXX - Nombre de usuario ya registrado, elija otro - XXX" });
+      }
       return res.status(500).json({ message: "XXX - Error inesperado en controller al modificar usuario - XXX" });
     }
   }

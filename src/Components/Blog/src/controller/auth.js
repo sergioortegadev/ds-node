@@ -21,6 +21,12 @@ const register = async (req, res) => {
     return res.status(201).json({ message: `Usuario ${req.body.username} agregado con exito.`, userReturned });
   } catch (error) {
     console.log(error);
+    if (error.code === 11000 && error.keyPattern.mail) {
+      return res.status(400).json({ message: "XXX - Mail ya registrado, intente recuperar contraseña - XXX" });
+    }
+    if (error.code === 11000 && error.keyPattern.username) {
+      return res.status(400).json({ message: "XXX - Nombre de usuario ya registrado, elija otro - XXX" });
+    }
     return res.status(500).json({ message: "XXX - Error inesperado al agregar usuario - XXX" });
   }
 };
